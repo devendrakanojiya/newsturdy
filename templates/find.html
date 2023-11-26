@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find</title>
+</head>
+
+<body>
+    <h1>Find Paste Here</h1>
+    <form action="" method="post">
+        <div class="form">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Paste ID</span>
+                <input name="pasteID" type="text" class="form-control" placeholder="Enter Paste ID here" id="pasteID" aria-label="pasteID"
+                    aria-describedby="basic-addon1">
+            </div>
+
+            <select name="visible" id="visibility">
+                <option value="public">public</option>
+                <option value="private">private</option>
+            </select>
+            <button type="submit" class="btn btn-outline-secondary">FIND</button>
+
+        </div>
+    </form>
+
+    {% if paste %}
+    <div class="alert alert-success">
+        Paste Content: {{ paste.pastecontent }}
+    </div>
+    {% endif %}
+</body>
+
+</html>

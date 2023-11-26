@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        body{
+            background-color: #B5CB99;
+        }
+    </style>
+</head>
+
+
+
+<body >
+    <header class="header">
+        <nav>
+            <div class="navbar">
+                <div class="logo"><a href="#">Portfolio.</a></div>
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <div class="cancel-btn">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </ul>
+                <div class="media-icons">
+                    <a href=""><i class="fab fa-Discord-f"></i></a>
+                    <a href=""><i class="fab fa-telegram"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <article style="position: absolute;">
+        <!-- Home Section Start -->
+ <section class="home section0" id="home">
+    <div class="home-content">
+      <div class="text">
+        <div class="text-one">An Open-Source,</div>
+        <div class="text-two">CodeBin</div>
+        <div class="text-three">share your codes semlessly</div>
+        <div class="text-four">This encryped</div>
+      </div>
+      <div class="button">
+         <button><a href="#section2">PASTE</a></button>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+    <h1>Hello MyApp</h1>
+    {% if message %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endif %}
+    <section class="section2" id="section2">
+        <div class="container">
+            <form action="/" method="post">
+                <div class="formdiv">
+                    {% csrf_token %}
+                    <div class="maindiv maindiv1">
+                        <div class="title dark-text">Title</div>
+                        <input name="pastetitle" type="text" class="inputtitle textfield" placeholder="Username"
+                            id="pastetitle" aria-label="pastetitle" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="maindiv maindiv2">
+                        <div class="pastearea dark-text">Paste Place</div>
+                        <textarea name="pastecontent" class="inputpaste textfield" id="pastecontent"
+                            aria-label="Paste Here"></textarea>
+                    </div>
+
+                    <div class="maindiv maindiv3">
+                        <select name="visibility" id="visibility" class="visibility btn dark-text">
+                            <option value="public">public</option>
+                            <option value="private">private</option>
+                        </select>
+
+                        <button type="submit" class="btn dark-text">Create Paste</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        hello powered by codebin
+    </footer>
+    </article>
+
+
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+
+
+
+<!-- <body>
+    <h1>Hello MyApp</h1>
+        <form action="/" method="post">
+        <div class="form">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Title</span>
+                <input name="pastetitle"type="text" class="form-control" placeholder="Username" id="pastetitle" aria-label= "pastetitle"
+                    aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text">Paste Content</span>
+                <textarea name="pastecontent" class="form-control" id="pastecontent" aria-label="Paste Here"></textarea>
+            </div>
+
+            <select name="visible" id="visibility">
+                <option value="public">public</option>
+                <option value="private">private</option>
+            </select>
+            <button type="submit" class="btn btn-outline-secondary" onclick="paste()">GENERATE</button>
+     
+        </div>
+    </form>
+</body> -->
+
+</html>
+
